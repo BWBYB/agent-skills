@@ -22,3 +22,8 @@ Use these short scenarios for manual or agent review after changing a skill. The
 - "The work is blocked by a dependency" -> use `Milestone Snapshot` and record the blocker.
 - "Try changing this one line first" -> do not update `status.md` for the intermediate step alone.
 - A primarily code-focused task still refreshes status when it reaches completion, pause, block, or handoff.
+- Before creating `docs/status.md`, add `/docs/status.md` to the project-root `.gitignore`.
+- If `docs/status.md` is tracked, remove it from the index with `git rm --cached` and preserve the local file; never stage or commit it.
+- Status-panel completion requires `git ls-files docs/status.md` to be empty, the local file to exist, and no Markdown links to it from README or `llms.txt`.
+- Each worktree uses only its own ignored panel; cross-machine handoffs carry a concise progress summary in the handoff message.
+- Keep `In Progress` to 1-3 completion conditions; group completed work by phase and append the short commit hash when available.
