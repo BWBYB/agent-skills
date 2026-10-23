@@ -27,3 +27,8 @@ Use these short scenarios for manual or agent review after changing a skill. The
 - Status-panel completion requires `git ls-files docs/status.md` to be empty, the local file to exist, and no Markdown links to it from README or `llms.txt`.
 - Each worktree uses only its own ignored panel; cross-machine handoffs carry a concise progress summary in the handoff message.
 - Keep `In Progress` to 1-3 completion conditions; group completed work by phase and append the short commit hash when available.
+- Keep the seven headings in English, write body text in the project's main language, cap detailed history at 2-3 phases, and cap `Next` at 3 items.
+- Evidence numbers come from command output; pause or block entries include a file/decision and first action for resuming.
+- A reusable framework/toolchain/environment root cause may be added to `AGENTS.md` as symptom, cause, and avoidance guidance; an ordinary business-logic bug is not.
+- A consequential choice with real alternatives is appended to `docs/decisions.md`; routine choices are not logged or backfilled.
+- A full audit creates an ordered Fix Plan from confirmed findings only, with files, acceptance checks, and prerequisites; inferred gaps stay out.
