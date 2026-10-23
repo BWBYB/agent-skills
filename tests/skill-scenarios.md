@@ -29,6 +29,10 @@ Use these short scenarios for manual or agent review after changing a skill. The
 - Keep `In Progress` to 1-3 completion conditions; group completed work by phase and append the short commit hash when available.
 - Keep the seven headings in English, write body text in the project's main language, cap detailed history at 2-3 phases, and cap `Next` at 3 items.
 - Evidence numbers come from command output; pause or block entries include a file/decision and first action for resuming.
-- A reusable framework/toolchain/environment root cause may be added to `AGENTS.md` as symptom, cause, and avoidance guidance; an ordinary business-logic bug is not.
+- A reusable framework/toolchain/environment root cause is proposed first and written to `AGENTS.md` only after authorization; keep at most 12 entries and do not silently delete one.
 - A consequential choice with real alternatives is appended to `docs/decisions.md`; routine choices are not logged or backfilled.
 - A full audit creates an ordered Fix Plan from confirmed findings only, with files, acceptance checks, and prerequisites; inferred gaps stay out.
+- Create `llms.txt` only after verifying its path is deployed or served by a route; otherwise report the uncertainty and stop.
+- A new task overwrites the status panel; it does not append a previous-task table.
+- A code-complete but unverified phase remains `◐` without strikethrough; only accepted phases become `●` with strikethrough.
+- A status panel has one H1, `Progress`/`Current`/`Last Updated` as its only H2 sections, no HTML tags, and `Last Updated` as the final line.
