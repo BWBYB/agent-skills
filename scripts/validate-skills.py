@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SKILLS = ROOT / "skills"
 NAME_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 LINK_RE = re.compile(r"!?(?:\[[^\]]*\])\(([^)]+)\)")
+MACHINE_PATH_RE = re.compile(r"(?:/Users/|/home/|[A-Za-z]:\\)")
 errors: list[str] = []
 
 if not SKILLS.is_dir():
@@ -24,6 +25,8 @@ for skill_dir in sorted(path for path in SKILLS.iterdir() if path.is_dir()):
         continue
 
     text = skill_file.read_text(encoding="utf-8")
+    if MACHINE_PATH_RE.search(text):
+        errors.append(f"{skill_file}: contains a machine-specific absolute path")
     if not text.startswith("---\n"):
         errors.append(f"{skill_file}: missing YAML frontmatter")
         continue
